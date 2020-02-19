@@ -1,0 +1,10 @@
+spring:
+  cloud:
+    kubernetes:
+      config:
+        enabled: true
+        name: ${spring.application.name}
+        namespace: demo
+        paths:
+        enableApi: true
+
