@@ -20,8 +20,14 @@ stages:
     pool:
       vmImage: 'ubuntu-latest'
     steps:
+    - task: SonarQubePrepare@4
+      inputs:
+        scannerMode: 'Other'
     - task: SonarQubeAnalyze@4
-      displayName: Running SonarQube
+      displayName: Running SonarQube    
+    - task: SonarQubePublish@4
+      inputs:
+        pollingTimeoutSec: '300'
     - task: Docker@2
       displayName: Build an image
       inputs:
