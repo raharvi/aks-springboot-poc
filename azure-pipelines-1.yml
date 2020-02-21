@@ -21,7 +21,9 @@ stages:
       vmImage: 'ubuntu-latest'
     steps:
     - task: SonarQubePrepare@4
+      displayName: Prepparing analysis
       inputs:
+        SonarQube: 'SonarCloud'
         scannerMode: 'Other'
     - task: SonarQubeAnalyze@4
       displayName: Running SonarQube    
